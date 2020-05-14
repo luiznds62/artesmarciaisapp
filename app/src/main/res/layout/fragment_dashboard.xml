@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="5"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard_label_total_alunos_ano"
+                            android:textColor="@color/colorGray"></TextView>
+
+                        <TextView
+                            android:id="@+id/txvDashboardTotalAlunosAno"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="5.089"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="32dp"
+                            android:textStyle="bold"></TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="24dp"
+                            android:orientation="horizontal"
+                            android:weightSum="10">
+
+                            <ImageView
+                                android:id="@+id/imgTotalAlunosAno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8"
+                                android:src="@drawable/ic_trending_up_sucess_24dp"></ImageView>
+
+                            <TextView
+                                android:id="@+id/txvTotalAlunosAno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="+ 96,54%"
+                                android:textColor="@color/colorSucess"></TextView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard_label_total_alunos_mes"
+                            android:textColor="@color/colorGray"></TextView>
+
+                        <TextView
+                            android:id="@+id/txvDashboardTotalAlunosMes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-15"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="32dp"
+                            android:textStyle="bold"></TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="24dp"
+                            android:orientation="horizontal"
+                            android:weightSum="10">
+
+                            <ImageView
+                                android:id="@+id/imgTotalAlunosMes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8"
+                                android:src="@drawable/ic_trending_down_danger_24dp"></ImageView>
+
+                            <TextView
+                                android:id="@+id/txvTotalAlunosMes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="- 2,59%"
+                                android:textColor="@color/colorDanger"></TextView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="5"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard_label_top_modalidade"
+                            android:textColor="@color/colorGray"></TextView>
+
+                        <TextView
+                            android:id="@+id/txvDashboardTopModalidade"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Muay Thai"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="28dp"
+                            android:textStyle="bold"></TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="24dp"
+                            android:orientation="horizontal"
+                            android:weightSum="10">
+
+                            <ImageView
+                                android:id="@+id/imgTopModalidadeAno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8"
+                                android:src="@drawable/ic_trending_up_sucess_24dp"></ImageView>
+
+                            <TextView
+                                android:id="@+id/txvDashboardTopModalidadeAnoPercent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="+ 96,54%"
+                                android:textColor="@color/colorSucess"></TextView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard_label_worst_modalidade"
+                            android:textColor="@color/colorGray"></TextView>
+
+                        <TextView
+                            android:id="@+id/txvDashboardWorstModalidade"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Karatê"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="28dp"
+                            android:textStyle="bold"></TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="24dp"
+                            android:orientation="horizontal"
+                            android:weightSum="10">
+
+                            <ImageView
+                                android:id="@+id/imgTopModalidadeMes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8"
+                                android:src="@drawable/ic_trending_down_danger_24dp"></ImageView>
+
+                            <TextView
+                                android:id="@+id/txvDashboardTopModalidadeMesPercent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="- 2,59%"
+                                android:textColor="@color/colorDanger"></TextView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="5"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_marginBottom="16dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard_label_top_graduacao_mes"
+                            android:textColor="@color/colorGray"></TextView>
+
+                        <LinearLayout
+                            android:layout_marginBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="9">
+
+                            <TextView
+                                android:id="@+id/txvDashboardTop1Graduado"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Arnold Doe"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="24dp"
+                                android:textStyle="bold"></TextView>
+
+                            <ImageView
+                                android:layout_marginTop="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8"
+                                android:src="@drawable/ic_stars_black_24dp"></ImageView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="9">
+
+                            <TextView
+                                android:id="@+id/txvDashboardTop2Graduado"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Stephen King"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="24dp"
+                                android:textStyle="bold"></TextView>
+
+                            <ImageView
+                                android:layout_marginTop="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8"
+                                android:src="@drawable/ic_stars_black_24dp"></ImageView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginBottom="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="9">
+
+                            <TextView
+                                android:id="@+id/txvDashboardTop3Graduado"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Jane Doe"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="24dp"
+                                android:textStyle="bold"></TextView>
+
+                            <ImageView
+                                android:layout_marginTop="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8"
+                                android:src="@drawable/ic_stars_black_24dp"></ImageView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

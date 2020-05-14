@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Artes Marciais</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_revenues">Faturamento</string>
+    <string name="title_configuration">Configurações</string>
+    <string name="title_students">Alunos</string>
+    <string name="title_matriculations">Matrículas</string>
+    <string name="title_add_students">Adicionar aluno</string>
+
+    <string name="hint_login_email">Email</string>
+    <string name="hint_login_password">Senha</string>
+
+    <string name="hint_matriculation_student">Aluno</string>
+    <string name="hint_matriculation_paydate">Dia de vencimento</string>
+    <string name="hint_matriculation_date">Data da matrícula</string>
+
+    <string name="student">Aluno</string>
+    <string name="menu_text_search_students">Pesquisar</string>
+    <string name="menu_text_add_students">Adicionar</string>
+    <string name="hint_student_name">Nome</string>
+    <string name="hint_student_birthdate">Data de nascimento</string>
+    <string name="hint_student_sex">Sexo</string>
+    <string name="hint_student_phone">Telefone</string>
+    <string name="hint_student_cellphone">Celular</string>
+    <string name="hint_student_email">Email</string>
+    <string name="hint_student_observation">Observação</string>
+    <string name="hint_student_address">Endereço</string>
+    <string name="hint_student_number">Número</string>
+    <string name="hint_student_complement">Complemento</string>
+    <string name="hint_student_neighborhood">Bairro</string>
+    <string name="hint_student_city">Cidade</string>
+    <string name="hint_student_state">Estado</string>
+    <string name="hint_student_country">Pais</string>
+    <string name="hint_student_cep">Cep</string>
+    <string name="label_student_sex">Sexo: </string>
+    <string name="text_student_button_add">Salvar</string>
+
+    <string name="dialog_sucess">Sucesso</string>
+    <string name="dialog_error">Erro</string>
+    <string name="dialog_saved_sucess">salvo com sucesso</string>
+
+    <string name="button_text_login">Entrar</string>
+    <string name="button_text_create_account">Criar Conta</string>
+
+    <string name="configuration_text_logout">Fazer logout</string>
+
+    <string name="dashboard_label_total_alunos_ano">Total Alunos (ano)</string>
+    <string name="dashboard_label_total_alunos_mes">Total Alunos (mês)</string>
+    <string name="dashboard_label_top_graduacao_mes">Top 3 Graduações (mês)</string>
+    <string name="dashboard_label_top_graduacao_ano">Top 3 Graduações (ano)</string>
+    <string name="dashboard_label_top_modalidade">Top Modalidade</string>
+    <string name="dashboard_label_worst_modalidade">Pior Modalidade</string>
+
+
+
+
+</resources>
