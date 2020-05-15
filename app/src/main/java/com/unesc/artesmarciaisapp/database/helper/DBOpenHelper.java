@@ -12,7 +12,7 @@ import com.unesc.artesmarciaisapp.models.FaturaMatriculaModel;
 public class DBOpenHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NOME = "banco.db";
-    private static final int DATABASE_VERSAO = 6;
+    private static final int DATABASE_VERSAO = 7;
 
     /**
      * Construtor padrão da classe.
@@ -55,6 +55,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         db.execSQL(FaturaMatriculaModel.CREATE_TABLE);
 
         // Matricula
+        db.execSQL(MatriculationModel.DROP_TABLE);
         db.execSQL(MatriculationModel.CREATE_TABLE);
     }
 }

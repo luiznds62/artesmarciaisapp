@@ -20,9 +20,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtStudentNameInput"
-                android:inputType="text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -36,10 +36,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputStudentBirthdate"
-                android:inputType="date"
                 android:maxLength="9"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:editable="false" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,9 +68,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtStudentPhoneInput"
-                android:inputType="phone"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="phone" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,9 +84,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtStudentCellphoneInput"
-                android:inputType="phone"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="phone" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,9 +100,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtStudentEmailInput"
-                android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -116,9 +116,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtStudentObservationInput"
-                android:inputType="text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,9 +132,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtStudentCepInput"
-                android:inputType="number"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -148,10 +148,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtStudentAddressInput"
-                android:inputType="text"
-
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
+                android:layout_height="wrap_content"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -165,9 +165,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtStudentNumberInput"
-                android:inputType="number"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -196,9 +196,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtStudentNeighborhoodInput"
-                android:inputType="text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -211,26 +211,26 @@
             android:hint="@string/hint_student_state">
 
             <AutoCompleteTextView
-                android:editable="false"
                 android:id="@+id/studentsDropdownState"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:editable="false" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edtStudentCity"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="@string/hint_student_city">
 
-            <AutoCompleteTextView
-                android:editable="false"
-                android:id="@+id/studentsDropdownCity"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtStudentCityInput"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:editable="false" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -244,10 +244,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtStudentCountryInput"
-                android:enabled="false"
-                android:inputType="text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

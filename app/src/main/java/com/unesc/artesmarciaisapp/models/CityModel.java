@@ -1,6 +1,8 @@
 package com.unesc.artesmarciaisapp.models;
 
-public class CityModel {
+import ir.mirrajabi.searchdialog.core.Searchable;
+
+public class CityModel implements Searchable {
     public static final String
             TABELA_NOME = "tb_cidade";
 
@@ -62,5 +64,10 @@ public class CityModel {
 
     public void setPais(String pais) {
         this.pais = pais;
+    }
+
+    @Override
+    public String getTitle() {
+        return cidade;
     }
 }

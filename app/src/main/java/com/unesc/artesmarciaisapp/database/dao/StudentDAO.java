@@ -127,6 +127,28 @@ public class StudentDAO extends AbstractDAO {
         return lo_arl_dados;
     }
 
+    public StudentModel getById(String codigo_aluno) {
+
+        StudentModel model = null;
+
+        try {
+            Open();
+
+            String selectQuery = "SELECT * FROM " + StudentModel.TABELA_NOME + " WHERE " + StudentModel.COLUNA_CODIGO_ALUNO + " = '" + codigo_aluno + "';";
+            Cursor cursor = db.rawQuery(selectQuery, null);
+
+            if (cursor.moveToFirst()) {
+                model = CursorToStructure(cursor);
+            }
+
+            cursor.close();
+        } finally {
+            Close();
+        }
+
+        return model;
+    }
+
     public StudentModel getByName(String name) {
 
         StudentModel model = null;

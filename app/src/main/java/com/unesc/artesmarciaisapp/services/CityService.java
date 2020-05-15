@@ -8,7 +8,7 @@ import com.unesc.artesmarciaisapp.models.CityModel;
 import java.util.List;
 
 public class CityService {
-    CityDAO dao;
+    private CityDAO dao;
 
     public CityService(Context context) {
         this.dao = new CityDAO(context);

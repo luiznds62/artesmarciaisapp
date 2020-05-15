@@ -1,8 +1,8 @@
 package com.unesc.artesmarciaisapp.models;
 
-import java.util.Date;
+import ir.mirrajabi.searchdialog.core.Searchable;
 
-public class StudentModel {
+public class StudentModel implements Searchable {
 
     public static final String
             TABELA_NOME = "tb_aluno";
@@ -232,5 +232,10 @@ public class StudentModel {
 
     public void setCep(String cep) {
         this.cep = cep;
+    }
+
+    @Override
+    public String getTitle() {
+        return aluno;
     }
 }

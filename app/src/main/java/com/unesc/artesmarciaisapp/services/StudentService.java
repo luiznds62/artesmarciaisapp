@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class StudentService {
-    StudentDAO dao;
+    private StudentDAO dao;
 
     public StudentService(Context context) {
         this.dao = new StudentDAO(context);
@@ -17,6 +17,10 @@ public class StudentService {
 
     public List<StudentModel> getAll() {
         return this.dao.select();
+    }
+
+    public StudentModel getByCodigoAluno(int codigo){
+        return this.dao.getById(codigo);
     }
 
     public void delete(StudentModel entityDelete) {

@@ -29,6 +29,7 @@ public class MatriculationModel {
     private String data_matricula;
     private String dia_vencimento;
     private String data_encerramento;
+    private StudentModel student;
 
     public MatriculationModel() {
     }
@@ -38,6 +39,20 @@ public class MatriculationModel {
         this.codigo_aluno = codigo_aluno;
         this.data_matricula = data_matricula;
         this.dia_vencimento = data_vencimento;
+    }
+
+    public MatriculationModel(int codigo_aluno, String data_matricula, String dia_vencimento) {
+        this.codigo_aluno = codigo_aluno;
+        this.data_matricula = data_matricula;
+        this.dia_vencimento = dia_vencimento;
+    }
+
+    public StudentModel getStudent() {
+        return student;
+    }
+
+    public void setStudent(StudentModel student) {
+        this.student = student;
     }
 
     public int getCodigo_matricula() {

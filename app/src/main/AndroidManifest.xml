@@ -49,6 +49,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity
+            android:name=".ui.matriculation.AddMatriculationActivity"
+            android:label="@string/title_add_matriculations">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.matriculation.MatriculationActivity" />
+        </activity>
     </application>
 
 </manifest>

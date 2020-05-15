@@ -12,14 +12,15 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/spnMatriculationStudent"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="@string/hint_matriculation_student">
 
-            <AutoCompleteTextView
-                android:id="@+id/matriculationDropdownStudent"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtMatriculationStudent"
+                android:editable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -35,7 +36,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputMatriculationDate"
-                android:inputType="date"
+                android:editable="false"
                 android:maxLength="9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

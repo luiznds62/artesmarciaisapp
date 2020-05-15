@@ -27,11 +27,16 @@ import com.unesc.artesmarciaisapp.models.StudentModel;
 import com.unesc.artesmarciaisapp.services.CepService;
 import com.unesc.artesmarciaisapp.services.CityService;
 import com.unesc.artesmarciaisapp.services.StudentService;
+import com.unesc.artesmarciaisapp.ui.matriculation.AddMatriculationActivity;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
+import ir.mirrajabi.searchdialog.SimpleSearchDialogCompat;
+import ir.mirrajabi.searchdialog.core.BaseSearchDialogCompat;
+import ir.mirrajabi.searchdialog.core.SearchResultListener;
 
 public class AddStudentActivity extends AppCompatActivity {
     private StudentService studentService = new StudentService(AddStudentActivity.this);
@@ -48,7 +53,7 @@ public class AddStudentActivity extends AppCompatActivity {
     private TextInputEditText edtStudentNumberInput;
     private TextInputEditText edtStudentComplementInput;
     private TextInputEditText edtStudentNeighborhoodInput;
-    private AutoCompleteTextView studentsDropdownCity;
+    private TextInputEditText edtStudentCityInput;
     private AutoCompleteTextView studentsDropdownState;
     private TextInputEditText edtStudentCountryInput;
     private TextInputEditText edtStudentCepInput;
@@ -68,7 +73,6 @@ public class AddStudentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_student);
         List<String> statesList = new ArrayList<String>();
 
-        // Gambiarrinha
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -79,37 +83,59 @@ public class AddStudentActivity extends AppCompatActivity {
             }
         }
 
+        edtStudentCityInput = findViewById(R.id.edtStudentCityInput);
         studentsDropdownState = findViewById(R.id.studentsDropdownState);
         String[] states = statesList.toArray(new String[0]);
         ArrayAdapter<String> adapterState = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, states);
         studentsDropdownState.setAdapter(adapterState);
-
-        studentsDropdownCity = findViewById(R.id.studentsDropdownCity);
-        String[] cities = new String[]{};
-        ArrayAdapter<String> adapterCity = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, cities);
-        studentsDropdownCity.setAdapter(adapterCity);
-
         studentsDropdownState.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View arg1, int pos, long id) {
-                String country = "";
-                List<CityModel> citiesModels = cityService.getByState(states[pos]);
-                List<String> citiesList = new ArrayList<String>();
-                for(CityModel city : citiesModels){
-                    if(!citiesList.contains(city.getCidade())){
-                        citiesList.add(city.getCidade());
-                    }
-                    if(country.equals("")){
-                        country = city.getPais();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                edtStudentCityInput.setText("");
+            }
+        });
+
+        edtStudentCityInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String state = studentsDropdownState.getText().toString();
+                if(state != null && !state.equals("")){
+                    List<CityModel> citiesModels = cityService.getByState(state);
+                    showCityDialogSearch(citiesModels);
+                }else{
+                    new AlertDialog.Builder(AddStudentActivity.this)
+                            .setTitle("Erro")
+                            .setMessage("É necessário informar o estado")
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            })
+                            .show();
+                }
+            }
+        });
+        edtStudentCityInput.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (hasFocus) {
+                    String state = studentsDropdownState.getText().toString();
+                    if(state != null && !state.equals("")){
+                        List<CityModel> citiesModels = cityService.getByState(state);
+                        showCityDialogSearch(citiesModels);
+                    }else{
+                        new AlertDialog.Builder(AddStudentActivity.this)
+                                .setTitle("Erro")
+                                .setMessage("É necessário informar o estado")
+                                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                    }
+                                })
+                                .show();
                     }
                 }
-                String[] citiesByState = citiesList.toArray(new String[0]);
-                ArrayAdapter<String> adapterCity = new ArrayAdapter<String>(arg1.getContext(), android.R.layout.simple_spinner_dropdown_item, citiesByState);
-                studentsDropdownCity.setAdapter(adapterCity);
-                studentsDropdownCity.setText("");
-                edtStudentCountryInput.setText(country);
             }
-
         });
 
         studentsDropdownSex = findViewById(R.id.studentsDropdownSex);
@@ -133,11 +159,13 @@ public class AddStudentActivity extends AppCompatActivity {
         edtStudentPhoneInput.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
         edtStudentCellphoneInput.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
 
-        edtStudentBirthdate = findViewById(R.id.edtStudentBirthdate);
-        edtStudentBirthdate.setOnClickListener(new View.OnClickListener() {
+        inputStudentBirthdate = findViewById(R.id.inputStudentBirthdate);
+        inputStudentBirthdate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void onClick(View v) {
-                setDate(v);
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (hasFocus) {
+                    setDate(view);
+                }
             }
         });
 
@@ -158,7 +186,7 @@ public class AddStudentActivity extends AppCompatActivity {
                             studentsDropdownState.setText(cepService.getStateByUf(cepInfo.getUf()));
                         }
                         if(!cepInfo.getLocalidade().equals("")){
-                            studentsDropdownCity.setText(cepInfo.getLocalidade());
+                            edtStudentCityInput.setText(cepInfo.getLocalidade());
                             edtStudentCountryInput.setText("Brasil");
                         }
                     }
@@ -203,6 +231,20 @@ public class AddStudentActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void showCityDialogSearch(List<CityModel> citiesModelList){
+        new SimpleSearchDialogCompat(AddStudentActivity.this, studentsDropdownState.getText().toString(),
+                "Pesquisar", null, (ArrayList) citiesModelList,
+                new SearchResultListener<CityModel>() {
+                    @Override
+                    public void onSelected(BaseSearchDialogCompat dialog,
+                                           CityModel item, int position) {
+                        edtStudentCityInput.setText(item.getTitle());
+                        edtStudentCountryInput.setText(item.getPais());
+                        dialog.dismiss();
+                    }
+                }).show();
     }
 
     @SuppressWarnings("deprecation")
@@ -257,7 +299,7 @@ public class AddStudentActivity extends AppCompatActivity {
         String numero = edtStudentNumberInput.getText().toString();
         String complemento = edtStudentComplementInput.getText().toString();
         String bairro = edtStudentNeighborhoodInput.getText().toString();
-        String cidade = studentsDropdownCity.getText().toString();
+        String cidade = edtStudentCityInput.getText().toString();
         String estado = studentsDropdownState.getText().toString();
         String pais = edtStudentCountryInput.getText().toString();
         String cep = edtStudentCepInput.getText().toString();

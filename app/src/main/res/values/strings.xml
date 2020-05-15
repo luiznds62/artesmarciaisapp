@@ -5,14 +5,16 @@
     <string name="title_configuration">Configurações</string>
     <string name="title_students">Alunos</string>
     <string name="title_matriculations">Matrículas</string>
+    <string name="title_add_matriculations">Adicionar matrícula</string>
     <string name="title_add_students">Adicionar aluno</string>
 
     <string name="hint_login_email">Email</string>
     <string name="hint_login_password">Senha</string>
 
     <string name="hint_matriculation_student">Aluno</string>
-    <string name="hint_matriculation_paydate">Dia de vencimento</string>
+    <string name="hint_matriculation_paydate">Dia de vencimento (01 - 15)</string>
     <string name="hint_matriculation_date">Data da matrícula</string>
+
 
     <string name="student">Aluno</string>
     <string name="menu_text_search_students">Pesquisar</string>

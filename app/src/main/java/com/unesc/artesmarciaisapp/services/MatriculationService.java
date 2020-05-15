@@ -11,14 +11,20 @@ import java.util.List;
 import java.util.Optional;
 
 public class MatriculationService {
-    MatriculationDAO dao;
+    private MatriculationDAO dao;
 
     public MatriculationService(Context context) {
         this.dao = new MatriculationDAO(context);
     }
 
-    public List<MatriculationModel> getAll() {
-        return this.dao.select();
+    public List<MatriculationModel> getAll(Context context) {
+        StudentService studentService = new StudentService(context);
+        List<MatriculationModel> lst =  this.dao.select();
+        for(MatriculationModel model : lst){
+            model.setStudent(studentService.getByCodigoAluno(model.getCodigo_aluno()));
+        }
+
+        return lst;
     }
 
     public void delete(MatriculationModel entityDelete) {
@@ -26,6 +32,31 @@ public class MatriculationService {
     }
 
     public MatriculationModel create(final MatriculationModel newEntity) throws Exception {
+        if(this.dao.getByCodigoAluno(newEntity.getCodigo_aluno()) != null){
+            throw new Exception("Aluno já matrículado");
+        }
+
+        if(newEntity.getData_matricula().equals("")){
+            throw new Exception("É necessário informar a data da matrícula");
+        }
+
+        if(newEntity.getDia_vencimento().equals("")){
+            throw new Exception("É necessário informar o dia de vencimento");
+        }
+
+        if(newEntity.getDia_vencimento().length() > 2){
+            throw new Exception("Dia de vencimento inválido");
+        }
+
+        try {
+            int payDay = Integer.parseInt(newEntity.getDia_vencimento());
+            if(payDay < 0 || payDay > 15){
+                throw new Exception("Dia de vencimento deve estar entre os dias 1 ~ 15");
+            }
+        }catch (Exception e){
+            throw new Exception("Dia de vencimento inválido");
+        }
+
         this.dao.insert(newEntity);
         return this.dao.getByCodigoAluno(newEntity.getCodigo_aluno());
     }
