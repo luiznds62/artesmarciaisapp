@@ -10,20 +10,30 @@ import java.util.Optional;
 
 public class StudentService {
     private StudentDAO dao;
+    private MatriculationService matriculationService;
 
     public StudentService(Context context) {
         this.dao = new StudentDAO(context);
+        this.matriculationService = new MatriculationService(context);
     }
 
     public List<StudentModel> getAll() {
         return this.dao.select();
     }
 
-    public StudentModel getByCodigoAluno(int codigo){
+    public StudentModel getByCodigoAluno(int codigo) throws Exception {
+        if(codigo == 0){
+           throw new Exception("Código do aluno não informado");
+        }
+
         return this.dao.getById(codigo);
     }
 
-    public void delete(StudentModel entityDelete) {
+    public void delete(StudentModel entityDelete,Context context) throws Exception {
+        if(this.matriculationService.getByCodigoAluno(entityDelete.getCodigo_aluno(),context) != null){
+            throw new Exception("É necessário excluir a matrícula antes de excluir o aluno");
+        }
+
         this.dao.delete(String.valueOf(entityDelete.getCodigo_aluno()));
     }
 
@@ -119,7 +129,11 @@ public class StudentService {
             throw new Exception("Necessário informar o celular");
         }
 
-        this.dao.update(updateEntity,String.valueOf(this.dao.getByName(updateEntity.getAluno()).getCodigo_aluno()));
+        if(this.dao.getByEmail(updateEntity.getEmail()).getCodigo_aluno() != updateEntity.getCodigo_aluno()){
+            throw new Exception("Email já utilizado");
+        }
+
+        this.dao.update(updateEntity,String.valueOf(updateEntity.getCodigo_aluno()));
         return this.dao.getByName(updateEntity.getAluno());
     }
 }

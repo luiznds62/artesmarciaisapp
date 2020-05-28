@@ -17,7 +17,15 @@ public class MatriculationService {
         this.dao = new MatriculationDAO(context);
     }
 
-    public List<MatriculationModel> getAll(Context context) {
+    public MatriculationModel getByCodigoAluno(int codigo_aluno,Context context) throws Exception {
+        MatriculationModel matriculationRet = this.dao.getByCodigoAluno(codigo_aluno);
+        StudentService studentService = new StudentService(context);
+        StudentModel studentVinculated = studentService.getByCodigoAluno(matriculationRet.getCodigo_aluno());
+        matriculationRet.setStudent(studentVinculated);
+        return matriculationRet;
+    }
+
+    public List<MatriculationModel> getAll(Context context) throws Exception {
         StudentService studentService = new StudentService(context);
         List<MatriculationModel> lst =  this.dao.select();
         for(MatriculationModel model : lst){

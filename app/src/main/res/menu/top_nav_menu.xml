@@ -4,17 +4,14 @@
 
     <item
         android:id="@+id/btnStudentScreen"
-        android:title="Alunos" />
+        android:title="@string/title_students" />
     <item
         android:id="@+id/btnMatriculationScreen"
-        android:title="Matrículas" />
+        android:title="@string/title_matriculations" />
     <item
-        android:id="@+id/btnGraduacao"
-        android:title="Graduações" />
+        android:id="@+id/btnModalityScreen"
+        android:title="@string/title_modality" />
     <item
-        android:id="@+id/btnModalidades"
-        android:title="Modalidades" />
-    <item
-        android:id="@+id/btnPlanos"
+        android:id="@+id/btnPlanScreen"
         android:title="Planos" />
 </menu>

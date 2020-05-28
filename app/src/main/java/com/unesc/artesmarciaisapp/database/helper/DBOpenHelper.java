@@ -5,14 +5,17 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.unesc.artesmarciaisapp.models.CityModel;
+import com.unesc.artesmarciaisapp.models.GraduationModel;
 import com.unesc.artesmarciaisapp.models.MatriculationModel;
+import com.unesc.artesmarciaisapp.models.ModalityModel;
+import com.unesc.artesmarciaisapp.models.PlanModel;
 import com.unesc.artesmarciaisapp.models.StudentModel;
 import com.unesc.artesmarciaisapp.models.FaturaMatriculaModel;
 
 public class DBOpenHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NOME = "banco.db";
-    private static final int DATABASE_VERSAO = 7;
+    private static final int DATABASE_VERSAO = 11;
 
     /**
      * Construtor padrão da classe.
@@ -34,6 +37,9 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         db.execSQL(StudentModel.CREATE_TABLE);
         db.execSQL(FaturaMatriculaModel.CREATE_TABLE);
         db.execSQL(MatriculationModel.CREATE_TABLE);
+        db.execSQL(ModalityModel.CREATE_TABLE);
+        db.execSQL(GraduationModel.CREATE_TABLE);
+        db.execSQL(PlanModel.CREATE_TABLE);
     }
 
     @Override
@@ -57,5 +63,17 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         // Matricula
         db.execSQL(MatriculationModel.DROP_TABLE);
         db.execSQL(MatriculationModel.CREATE_TABLE);
+
+        // Modalidade
+        db.execSQL(ModalityModel.DROP_TABLE);
+        db.execSQL(ModalityModel.CREATE_TABLE);
+
+        // Graduação
+        db.execSQL(GraduationModel.DROP_TABLE);
+        db.execSQL(GraduationModel.CREATE_TABLE);
+
+        // Plano
+        db.execSQL(PlanModel.DROP_TABLE);
+        db.execSQL(PlanModel.CREATE_TABLE);
     }
 }

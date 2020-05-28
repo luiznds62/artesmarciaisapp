@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="40dp"
         android:weightSum="10"
         android:orientation="horizontal">
 
@@ -16,51 +16,38 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="8dp"
-                android:layout_weight="4"
+                android:layout_weight="5"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txvAlunosRowNome"
+                    android:id="@+id/txvGraduationName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fulano de Tal"
+                    android:text="Faixa Preta"
                     android:textColor="@color/colorBlack"
                     android:textSize="16dp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txvAlunosRowCelular"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="(48) 99830-0460"
-                    android:textColor="@color/colorGray" />
-
-                <TextView
-                    android:id="@+id/txvAlunosRowBairro"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="Rio Maina, 370"
-                    android:textColor="@color/colorGray" />
             </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="4"
-            android:orientation="vertical">
+            android:weightSum="10"
+            android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/btnStudentDelete"
+                android:layout_weight="6"
+                android:id="@+id/btnGraduationDelete"
                 android:tint="@color/colorPrimary"
-                android:layout_marginBottom="8dp"
                 android:background="@null"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_delete_black_24dp"></ImageButton>
 
             <ImageButton
-                android:id="@+id/btnStudentUpdate"
+                android:layout_weight="6"
+                android:id="@+id/btnGraduationUpdate"
                 android:tint="@color/colorPrimary"
                 android:background="@null"
                 android:layout_width="match_parent"

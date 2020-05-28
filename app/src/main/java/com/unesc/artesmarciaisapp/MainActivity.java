@@ -8,6 +8,8 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.unesc.artesmarciaisapp.ui.matriculation.MatriculationActivity;
+import com.unesc.artesmarciaisapp.ui.modality.ModalityActivity;
+import com.unesc.artesmarciaisapp.ui.plan.PlanActivity;
 import com.unesc.artesmarciaisapp.ui.student.StudentActivity;
 
 import androidx.annotation.NonNull;
@@ -50,6 +52,16 @@ public class MainActivity extends AppCompatActivity {
 
         if(id == R.id.btnMatriculationScreen){
             Intent intent = new Intent(this, MatriculationActivity.class);
+            startActivity(intent);
+        }
+
+        if(id == R.id.btnModalityScreen){
+            Intent intent = new Intent(this, ModalityActivity.class);
+            startActivity(intent);
+        }
+
+        if(id == R.id.btnPlanScreen){
+            Intent intent = new Intent(this, PlanActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);

@@ -3,18 +3,49 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_revenues">Faturamento</string>
     <string name="title_configuration">Configurações</string>
+    <string name="title_plan">Planos</string>
     <string name="title_students">Alunos</string>
     <string name="title_matriculations">Matrículas</string>
+    <string name="title_modality">Modalidades</string>
+    <string name="title_graduation">Graduações</string>
+    <string name="title_add_graduation">Adicionar graduação</string>
+    <string name="title_add_plan">Adicionar plano</string>
+    <string name="title_open_plan">Vizualizar plano</string>
+    <string name="title_update_graduation">Atualizar graduação</string>
+    <string name="title_add_modality">Adicionar modalidade</string>
+    <string name="title_update_modality">Atualizar modalidade</string>
     <string name="title_add_matriculations">Adicionar matrícula</string>
+    <string name="title_update_matriculations">Atualizar matrícula</string>
     <string name="title_add_students">Adicionar aluno</string>
+    <string name="title_update_students">Atualizar aluno</string>
+
+    <string name="update_sucess">Registro atualizado com sucesso!</string>
+    <string name="delete_sucess">Registro deletado com sucesso!</string>
+    <string name="delete_confirmation_text">Tem certeza que deseja deletar?</string>
 
     <string name="hint_login_email">Email</string>
     <string name="hint_login_password">Senha</string>
 
+    <string name="hint_plan_modality">Modalidade</string>
+    <string name="hint_plan_name">Nome</string>
+    <string name="hint_plan_value">Valor mensal</string>
+    <string name="text_plan_delete_text">Plano modalidade</string>
+
     <string name="hint_matriculation_student">Aluno</string>
     <string name="hint_matriculation_paydate">Dia de vencimento (01 - 15)</string>
     <string name="hint_matriculation_date">Data da matrícula</string>
+    <string name="text_matriculation_button_add">Salvar</string>
+    <string name="text_matriculation_button_update">Atualizar</string>
 
+    <string name="text_graduation_delete_text">Deletar graduação</string>
+
+    <string name="hint_modality_name">Nome</string>
+    <string name="text_modality_add_graduation">Graduação</string>
+    <string name="menu_text_add_modality">Adicionar</string>
+    <string name="menu_text_search_modality">Pesquisar</string>
+    <string name="text_modality_button_add">Salvar</string>
+    <string name="text_modality_button_update">Atualizar</string>
+    <string name="text_modality_delete_text">Deletar modalidade</string>
 
     <string name="student">Aluno</string>
     <string name="menu_text_search_students">Pesquisar</string>
@@ -36,8 +67,10 @@
     <string name="hint_student_cep">Cep</string>
     <string name="label_student_sex">Sexo: </string>
     <string name="text_student_button_add">Salvar</string>
+    <string name="text_student_button_update">Atualizar</string>
 
     <string name="dialog_sucess">Sucesso</string>
+    <string name="dialog_warning">Aviso</string>
     <string name="dialog_error">Erro</string>
     <string name="dialog_saved_sucess">salvo com sucesso</string>
 

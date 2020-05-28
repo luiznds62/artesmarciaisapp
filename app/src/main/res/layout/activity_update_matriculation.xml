@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/spnMatriculationStudent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/hint_matriculation_student">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtMatriculationStudent"
+                android:enabled="false"
+                android:editable="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edtMatriculationDate"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/hint_matriculation_date">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputMatriculationDate"
+                android:editable="false"
+                android:enabled="false"
+                android:maxLength="9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edtMatriculationPayDate"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/hint_matriculation_paydate">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtMatriculationPayDateInput"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+            
+            <TextView
+                android:layout_weight="8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conta encerrada"
+                android:textSize="16dp"></TextView>
+
+            <CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/chkEncerrarConta"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                app:useMaterialThemeColors="false"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnMatriculationUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/text_matriculation_button_update"
+            android:textColor="@color/colorWhite"></Button>
+    </LinearLayout>
+
+</ScrollView>

@@ -253,13 +253,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btnStudentSave"
+            android:id="@+id/btnStudentUpdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="32dp"
             android:background="@color/colorPrimary"
-            android:text="@string/text_student_button_add"
+            android:text="@string/text_student_button_update"
             android:textColor="@color/colorWhite"></Button>
     </LinearLayout>
 

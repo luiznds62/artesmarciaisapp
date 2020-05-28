@@ -43,6 +43,13 @@
                 android:value=".ui.student.StudentActivity" />
         </activity>
         <activity
+            android:name=".ui.student.UpdateStudentActivity"
+            android:label="@string/title_update_students">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.student.StudentActivity" />
+        </activity>
+        <activity
             android:name=".ui.matriculation.MatriculationActivity"
             android:label="@string/title_matriculations">
             <meta-data
@@ -55,6 +62,69 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.matriculation.MatriculationActivity" />
+        </activity>
+        <activity
+            android:name=".ui.matriculation.UpdateMatriculationActivity"
+            android:label="@string/title_update_matriculations">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.matriculation.MatriculationActivity" />
+        </activity>
+        <activity
+            android:name=".ui.modality.ModalityActivity"
+            android:label="@string/title_modality">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.modality.AddModalityActivity"
+            android:label="@string/title_add_modality">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.modality.ModalityActivity" />
+        </activity>
+        <activity
+            android:name=".ui.modality.UpdateModalityActivity"
+            android:label="@string/title_update_modality">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.modality.ModalityActivity" />
+        </activity>
+        <activity
+            android:name=".ui.graduation.GraduationActivity"
+            android:label="@string/title_graduation">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.modality.ModalityActivity" />
+        </activity>
+        <activity
+            android:name=".ui.graduation.AddGraduationActivity"
+            android:label="@string/title_add_graduation">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.graduation.GraduationActivity" />
+        </activity>
+        <activity
+            android:name=".ui.graduation.UpdateGraduationActivity"
+            android:label="@string/title_update_graduation">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.graduation.GraduationActivity" />
+        </activity>
+        <activity
+            android:name=".ui.plan.PlanActivity"
+            android:label="@string/title_plan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.plan.AddPlanActivity"
+            android:label="@string/title_add_plan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.plan.PlanActivity" />
         </activity>
     </application>
 

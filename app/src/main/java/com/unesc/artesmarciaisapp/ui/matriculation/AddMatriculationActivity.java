@@ -10,8 +10,6 @@ import android.os.StrictMode;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.Toast;
@@ -20,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.unesc.artesmarciaisapp.R;
-import com.unesc.artesmarciaisapp.models.CityModel;
 import com.unesc.artesmarciaisapp.models.MatriculationModel;
 import com.unesc.artesmarciaisapp.models.StudentModel;
 import com.unesc.artesmarciaisapp.services.MatriculationService;
@@ -52,26 +49,52 @@ public class AddMatriculationActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+        List<MatriculationModel> matriculationList = null;
+        try {
+            matriculationList = this.matriculationService.getAll(AddMatriculationActivity.this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         List<StudentModel> studentsModelList = this.studentService.getAll();
-        List<String> studentsList = new ArrayList<String>();
+        List<StudentModel> studentsAvaibleList = new ArrayList<StudentModel>();
         for (StudentModel student : studentsModelList) {
-            if (!studentsList.contains(student.getAluno())) {
-                studentsList.add(student.getAluno());
+            Optional<MatriculationModel> studentMatriculated = matriculationList
+                    .stream()
+                    .filter(st -> st.getCodigo_aluno() == student.getCodigo_aluno())
+                    .findAny();
+
+            if (!studentMatriculated.isPresent()) {
+                studentsAvaibleList.add(student);
             }
+        }
+
+        if (studentsAvaibleList.isEmpty()) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(AddMatriculationActivity.this);
+            builder.setCancelable(false);
+            builder.setTitle(R.string.dialog_warning)
+                    .setMessage("Não há alunos disponíveis para matrícula.")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(AddMatriculationActivity.this, MatriculationActivity.class);
+                            setResult(AddMatriculationActivity.RESULT_OK, intent);
+                            AddMatriculationActivity.this.finish();
+                        }
+                    })
+                    .show();
         }
 
         edtMatriculationStudent = findViewById(R.id.edtMatriculationStudent);
         edtMatriculationStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showStudentDialogSearch(studentsModelList);
+                showStudentDialogSearch(studentsAvaibleList);
             }
         });
         edtMatriculationStudent.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 if (hasFocus) {
-                    showStudentDialogSearch(studentsModelList);
+                    showStudentDialogSearch(studentsAvaibleList);
                 }
             }
         });
