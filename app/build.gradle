@@ -36,6 +36,7 @@ dependencies {
     implementation group: 'javax.mail', name: 'mail', version: '1.4.1'
     implementation group: 'org.json', name: 'json', version: '20190722'
     implementation 'com.github.mirrajabi:search-dialog:1.2.4'
+    implementation 'com.github.jama5262:CarouselView:1.1.0'
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'

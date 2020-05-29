@@ -5,6 +5,7 @@ import android.content.Context;
 import com.unesc.artesmarciaisapp.database.dao.StudentDAO;
 import com.unesc.artesmarciaisapp.models.StudentModel;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -88,6 +89,7 @@ public class StudentService {
             throw new Exception("Aluno com este nome já cadastrado");
         }
 
+        newEntity.setCreatedDate(DateService.dateToStringFormated(new Date()));
         this.dao.insert(newEntity);
         return this.dao.getByName(newEntity.getAluno());
     }

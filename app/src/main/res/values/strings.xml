@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Artes Marciais</string>
+    <string name="app_name">Marcial</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_revenues">Faturamento</string>
     <string name="title_configuration">Configurações</string>
@@ -18,6 +18,7 @@
     <string name="title_update_matriculations">Atualizar matrícula</string>
     <string name="title_add_students">Adicionar aluno</string>
     <string name="title_update_students">Atualizar aluno</string>
+    <string name="hint_init_start">INICIAR</string>
 
     <string name="update_sucess">Registro atualizado com sucesso!</string>
     <string name="delete_sucess">Registro deletado com sucesso!</string>
@@ -29,7 +30,7 @@
     <string name="hint_plan_modality">Modalidade</string>
     <string name="hint_plan_name">Nome</string>
     <string name="hint_plan_value">Valor mensal</string>
-    <string name="text_plan_delete_text">Plano modalidade</string>
+    <string name="text_plan_delete_text">Deletar plano</string>
 
     <string name="hint_matriculation_student">Aluno</string>
     <string name="hint_matriculation_paydate">Dia de vencimento (01 - 15)</string>

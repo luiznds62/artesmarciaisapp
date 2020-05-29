@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class DateService {
     public static String dateToStringFormated(Date date) {
-        DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String strDate = dateFormat.format(date);
         return strDate;
     }

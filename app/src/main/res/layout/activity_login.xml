@@ -14,10 +14,11 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="150dp"
+            android:layout_marginTop="56dp"
+            android:layout_width="300dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:src="@drawable/logo"></ImageView>
+            android:src="@drawable/logo_marcial_2"></ImageView>
 
         <!--        <EditText-->
         <!--            android:id="@+id/edtEmail"-->
@@ -107,6 +108,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:text="@string/button_text_create_account"
             android:textColor="@color/colorWhite" />
 

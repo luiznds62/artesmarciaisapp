@@ -23,7 +23,8 @@ public class StudentModel implements Searchable {
             COLUNA_CIDADE = "cidade",
             COLUNA_ESTADO = "estado",
             COLUNA_PAIS = "pais",
-            COLUNA_CEP = "cep";
+            COLUNA_CEP = "cep",
+            COLUNA_CREATED_DATE = "createddate";
 
     public static final String
             CREATE_TABLE =
@@ -44,7 +45,8 @@ public class StudentModel implements Searchable {
                     + COLUNA_CIDADE + " text DEFAULT NULL, "
                     + COLUNA_ESTADO + " text DEFAULT NULL, "
                     + COLUNA_PAIS + " text DEFAULT NULL, "
-                    + COLUNA_CEP + " text DEFAULT NULL "
+                    + COLUNA_CEP + " text DEFAULT NULL, "
+                    + COLUNA_CREATED_DATE + " text DEFAULT NULL "
                     + ");";
 
     public static final String DROP_TABLE = "drop table if exists " + TABELA_NOME;
@@ -65,6 +67,7 @@ public class StudentModel implements Searchable {
     private String estado;
     private String pais;
     private String cep;
+    private String createdDate;
 
     public StudentModel(int codigo_aluno, String aluno, String data_nascimento, String sexo, String telefone, String celular, String email, String observacao, String endereco, String numero, String complemento, String bairro, String cidade, String estado, String pais, String cep) {
         this.codigo_aluno = codigo_aluno;
@@ -232,6 +235,14 @@ public class StudentModel implements Searchable {
 
     public void setCep(String cep) {
         this.cep = cep;
+    }
+
+    public String getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
     }
 
     @Override

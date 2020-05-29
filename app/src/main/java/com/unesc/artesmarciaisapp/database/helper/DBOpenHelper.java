@@ -15,7 +15,7 @@ import com.unesc.artesmarciaisapp.models.FaturaMatriculaModel;
 public class DBOpenHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NOME = "banco.db";
-    private static final int DATABASE_VERSAO = 11;
+    private static final int DATABASE_VERSAO = 12;
 
     /**
      * Construtor padrão da classe.

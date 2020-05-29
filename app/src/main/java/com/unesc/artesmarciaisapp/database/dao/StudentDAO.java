@@ -30,7 +30,8 @@ public class StudentDAO extends AbstractDAO {
                     StudentModel.COLUNA_CIDADE,
                     StudentModel.COLUNA_ESTADO,
                     StudentModel.COLUNA_PAIS,
-                    StudentModel.COLUNA_CEP
+                    StudentModel.COLUNA_CEP,
+                    StudentModel.COLUNA_CREATED_DATE
             };
 
     public StudentDAO(final Context context) {
@@ -61,6 +62,7 @@ public class StudentDAO extends AbstractDAO {
             values.put(StudentModel.COLUNA_ESTADO, model.getEstado());
             values.put(StudentModel.COLUNA_PAIS, model.getPais());
             values.put(StudentModel.COLUNA_CEP, model.getCep());
+            values.put(StudentModel.COLUNA_CREATED_DATE, model.getCreatedDate());
 
             rowAffect = db.insert(StudentModel.TABELA_NOME, null, values);
             System.out.println("Insert: " + rowAffect);
@@ -95,6 +97,7 @@ public class StudentDAO extends AbstractDAO {
             values.put(StudentModel.COLUNA_ESTADO, model.getEstado());
             values.put(StudentModel.COLUNA_PAIS, model.getPais());
             values.put(StudentModel.COLUNA_CEP, model.getCep());
+            values.put(StudentModel.COLUNA_CREATED_DATE, model.getCreatedDate());
 
             rowAffect = db.update(StudentModel.TABELA_NOME, values, StudentModel.COLUNA_CODIGO_ALUNO + "= ?", new String[]{whereCodigoAluno});
         } finally {
@@ -242,7 +245,7 @@ public class StudentDAO extends AbstractDAO {
             model.setEstado(cursor.getString(13));
             model.setPais(cursor.getString(14));
             model.setCep(cursor.getString(15));
-
+            model.setCreatedDate(cursor.getString(16));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

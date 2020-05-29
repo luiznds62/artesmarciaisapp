@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/imageCarousel"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="325dp"
+            android:layout_height="350dp">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/txvInitTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Bem-vindo"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="24dp"></TextView>
+
+        <TextView
+            android:id="@+id/txvInitSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:text="Tenha todos seus indicadores na palma da sua mão, quando e onde quiser!"
+            android:textColor="@color/colorGray"></TextView>
+
+        <Button
+            android:id="@+id/btnInitStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/hint_init_start"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textColorHint="@color/colorWhite"
+            android:layout_marginBottom="32dp"></Button>
+    </LinearLayout>
+</LinearLayout>

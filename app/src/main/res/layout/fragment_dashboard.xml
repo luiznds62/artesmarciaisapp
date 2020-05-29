@@ -113,15 +113,15 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="8"
-                                android:src="@drawable/ic_trending_down_danger_24dp"></ImageView>
+                                android:src="@drawable/ic_trending_up_sucess_24dp"></ImageView>
 
                             <TextView
                                 android:id="@+id/txvTotalAlunosMes"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
-                                android:text="- 2,59%"
-                                android:textColor="@color/colorDanger"></TextView>
+                                android:text="+ 96,54%"
+                                android:textColor="@color/colorSucess"></TextView>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -172,15 +172,8 @@
                             android:orientation="horizontal"
                             android:weightSum="10">
 
-                            <ImageView
-                                android:id="@+id/imgTopModalidadeAno"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="8"
-                                android:src="@drawable/ic_trending_up_sucess_24dp"></ImageView>
-
                             <TextView
-                                android:id="@+id/txvDashboardTopModalidadeAnoPercent"
+                                android:id="@+id/txvTopModalityStudentQuantity"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -219,15 +212,8 @@
                             android:orientation="horizontal"
                             android:weightSum="10">
 
-                            <ImageView
-                                android:id="@+id/imgTopModalidadeMes"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="8"
-                                android:src="@drawable/ic_trending_down_danger_24dp"></ImageView>
-
                             <TextView
-                                android:id="@+id/txvDashboardTopModalidadeMesPercent"
+                                android:id="@+id/txvWorstModalityStudentQuantity"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
